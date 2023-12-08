@@ -1,0 +1,1 @@
+select * from faculty_qualifications join (select a.ID  ,address ,namefirst,namelast,DOB, emailID,number from faculty_address join (select faculty.ID ,namefirst ,namelast ,DOB ,emailID ,facultyID, number from faculty , faculty_phone where faculty.id=faculty_phone.facultyID) a using (id)) b where faculty_qualifications.facultyID =b.id;
